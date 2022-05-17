@@ -28,4 +28,15 @@ public class UserValidationTest {
         boolean result = userValidation.validateLastName("sh");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() {
+        boolean result = userValidation.validateEmail("abc+def@33ff.co.in");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenEmail_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userValidation.validateEmail("RDdef@33ff.co.ind");
+        Assert.assertFalse(result);
+    }
 }
