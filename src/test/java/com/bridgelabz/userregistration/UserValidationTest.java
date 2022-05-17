@@ -47,7 +47,6 @@ public class UserValidationTest {
         boolean result = userValidation.validateMobileNumber("91 8534246980");
         Assert.assertTrue(result);
     }
-
     @Test
     public void givenMobileNumber_WhenNotProper_ShouldReturnFalse() {
         boolean result = userValidation.validateMobileNumber("918534246980");

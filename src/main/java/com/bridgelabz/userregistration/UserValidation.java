@@ -27,7 +27,6 @@ public class UserValidation {
         matcher = pattern.matcher(eMail);
         return matcher.matches();
     }
-
     public boolean validateMobileNumber(String mobNumber) {
         pattern = Pattern.compile(MOBILE_NUMBER_PATTERN);
         matcher = pattern.matcher(mobNumber);
