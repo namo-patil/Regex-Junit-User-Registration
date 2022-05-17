@@ -17,5 +17,15 @@ public class UserValidationTest {
         boolean result = userValidation.validateFirstName("kajal");
         Assert.assertFalse(result);
     }
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
+        boolean result = userValidation.validateLastName("Sharma");
+        Assert.assertTrue(result);
+    }
 
+    @Test
+    public void givenLastName_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userValidation.validateLastName("sh");
+        Assert.assertFalse(result);
+    }
 }
