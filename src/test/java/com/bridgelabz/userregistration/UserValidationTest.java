@@ -17,6 +17,7 @@ public class UserValidationTest {
         boolean result = userValidation.validateFirstName("kajal");
         Assert.assertFalse(result);
     }
+
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         boolean result = userValidation.validateLastName("Sharma");
@@ -28,6 +29,7 @@ public class UserValidationTest {
         boolean result = userValidation.validateLastName("sh");
         Assert.assertFalse(result);
     }
+
     @Test
     public void givenEmail_WhenProper_ShouldReturnTrue() {
         boolean result = userValidation.validateEmail("abc+def@33ff.co.in");
@@ -37,6 +39,18 @@ public class UserValidationTest {
     @Test
     public void givenEmail_WhenNotProper_ShouldReturnFalse() {
         boolean result = userValidation.validateEmail("RDdef@33ff.co.ind");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
+        boolean result = userValidation.validateMobileNumber("91 8534246980");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenNotProper_ShouldReturnFalse() {
+        boolean result = userValidation.validateMobileNumber("918534246980");
         Assert.assertFalse(result);
     }
 }
