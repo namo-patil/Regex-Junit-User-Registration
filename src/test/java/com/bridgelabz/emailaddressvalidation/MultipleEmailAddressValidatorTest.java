@@ -18,7 +18,7 @@ public class MultipleEmailAddressValidatorTest {
         this.expectedResult = expectedResult;
     }
 
-    //  Return type of method input() is Collection
+    // Return type of method input() is Collection
     @Parameterized.Parameters
     public static Collection input() {
         return Arrays.asList(new Object[][]{
