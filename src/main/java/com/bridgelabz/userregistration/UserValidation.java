@@ -1,5 +1,6 @@
 package com.bridgelabz.userregistration;
 
+import javax.naming.NameNotFoundException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,33 +12,83 @@ public class UserValidation {
     Pattern pattern;
     Matcher matcher;
 
-    public boolean validateFirstName(String firstName) {
+    public boolean validateFirstName(String firstName) throws InvalidUserException {
         pattern = Pattern.compile(NAME_PATTERN);
         matcher = pattern.matcher(firstName);
-        return matcher.matches();
+        boolean result = matcher.matches();
+        try {
+            if (result) {
+                return true;
+            } else {
+                throw new InvalidUserException("Please Enter Valid First Name");
+            }
+        } catch (InvalidUserException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 
-    public boolean validateLastName(String lastName) {
+    public boolean validateLastName(String lastName) throws InvalidUserException {
         pattern = Pattern.compile(NAME_PATTERN);
         matcher = pattern.matcher(lastName);
-        return matcher.matches();
+        boolean result = matcher.matches();
+        try {
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserException("Please Enter Valid Last Name");
+            }
+        } catch (InvalidUserException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 
-    public boolean validateEmail(String eMail) {
+    public boolean validateEmail(String eMail) throws InvalidUserException {
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(eMail);
-        return matcher.matches();
+        boolean result = matcher.matches();
+        try {
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserException("Please Enter Valid Email id");
+            }
+        } catch (InvalidUserException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 
-    public boolean validateMobileNumber(String mobNumber) {
+    public boolean validateMobileNumber(String mobNumber) throws InvalidUserException {
         pattern = Pattern.compile(MOBILE_NUMBER_PATTERN);
         matcher = pattern.matcher(mobNumber);
-        return matcher.matches();
+        boolean result = matcher.matches();
+        try {
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserException("Please Enter Valid Mobile Number");
+            }
+        } catch (InvalidUserException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 
-    public boolean validatePassword(String password) {
+    public boolean validatePassword(String password) throws InvalidUserException {
         pattern = Pattern.compile(PASSWORD_PATTERN);
         matcher = pattern.matcher(password);
-        return matcher.matches();
+        boolean result = matcher.matches();
+        try {
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserException("Please Enter Valid Password");
+            }
+        } catch (InvalidUserException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 }
